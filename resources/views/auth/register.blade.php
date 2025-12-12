@@ -61,6 +61,31 @@
                             </div>
                         </div>
 
+                        <!-- Role Selection -->
+                        <div class="row mb-3">
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Register as') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="role" id="role_student" value="student" checked>
+                                    <label class="form-check-label" for="role_student">
+                                        <strong>Student</strong> - Browse and learn from courses
+                                    </label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input" type="radio" name="role" id="role_instructor" value="instructor">
+                                    <label class="form-check-label" for="role_instructor">
+                                        <strong>Instructor</strong> - Create and manage courses
+                                    </label>
+                                </div>
+                                @error('role')
+                                    <span class="invalid-feedback d-block" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
